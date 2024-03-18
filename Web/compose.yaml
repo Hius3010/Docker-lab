@@ -1,0 +1,18 @@
+services: 
+  nginx: 
+    image: ca47c220e939
+    build: /home/hius/Docker-lab/Web/Dockerfile
+    ports:
+      - 8080:80
+    volumes:
+      - type: bind
+        source: /home/hius/Docker-lab/Web/
+        target: /usr/share/nginx/html
+      - type: bind
+        source: /home/hius/Docker-lab/Logs/
+        target: /var/log/nginx     
+#      - type: bind
+#        source: /home/hius/Docker-lab/Conf/nginx.conf
+#        target: /etc/nginx/nginx.conf
+
+    restart: always
