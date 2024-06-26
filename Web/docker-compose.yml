@@ -1,0 +1,14 @@
+version: "3"
+services: 
+  nginx: 
+    image: ca47c220e939
+    build: .
+    ports:
+      - 8080:80
+    volumes:
+      - /home/hius/Docker-lab/Web/:/usr/share/nginx/html
+      - /home/hius/Docker-lab/Logs/:/var/log/nginx
+#      - type: bind
+#        source: /home/hius/Docker-lab/Conf/nginx.conf
+#        target: /etc/nginx/nginx.conf
+    network_mode: host
